@@ -1,0 +1,130 @@
+/** Cover Story **/
+#cover_story {
+    width: 876px;
+    margin: 0 auto 30px;
+    position: relative;
+}
+#cover_story a.button {
+    background-position: 0 bottom;
+    display: block;
+    height: 47px;
+    width: 214px;
+    position: absolute;
+    bottom: 41px;
+    left: 305px;
+}
+#cover_story a.button:hover {
+    background-position: 0 -132px;
+}
+#cover_story span {
+    background: url(/assets/styleImages/shadow.jpg) no-repeat center top;
+    clear:both;
+    display: block;
+    height: 13px;
+    margin: -6px auto 0;
+}
+
+
+/* category browser */
+#category-browser{
+    float: right;
+    background: url(/assets/styleImages/bg-quick-search.jpg) no-repeat;
+    height: 319px;
+    width: 200px;
+    padding: 18px 29px;
+}
+
+#category-browser .ui-menu .ui-menu-item {
+    height: 45px;
+    font-family: arial, sans-serif;
+    font-size: 13px;
+}
+
+#category-browser .ui-menu {
+    z-index: 99999;
+}
+
+#category-browser .ui-state-focus{
+    color: #E47911;
+    font-weight: bold;
+}
+
+#category-browser .ui-state-active{
+    color: #E47911;
+    font-weight: bold;
+}
+
+/* category subtitle */
+.category_subtitle {
+    color: #bbb;
+    padding-left: 5px;
+    font-family: arial, sans-serif;
+    font-size: 10px;
+}
+
+
+.slidingDiv {
+    float: right;
+    height:300px;
+    width:300px;
+    margin-left: 710px;
+    background-color: #B9E1DE;
+    padding:20px;
+    margin-top:-2px;
+    border-bottom:5px solid #3399FF;
+    clear: right;
+    position: absolute;
+    z-index: 99;
+}
+
+.show_hide {
+    /*display:none;*/
+}
+
+
+/** MAIN **/
+#main, #main div {
+    margin: 0 0 30px;
+}
+ul.items {
+    display: inline-block;
+    list-style: none;
+    margin: 0 25px;
+    padding: 0;
+}
+ul.items li {
+    float: left;
+    width: 169px;
+    margin-left: 66px;
+}
+ul.items li:first-child {
+    margin-left: 0;
+}
+ul.items li img {
+    border: 1px solid #d2cecf;
+}
+ul.items li a {
+    color: #646b85;
+    font-family: 'Helvetica Neue';
+    font-size: 14px;
+    line-height: 24px;
+    text-align: left;
+    text-decoration: none;
+}
+ul.items li a:hover {
+    color: #a3cecf;
+}
+ul.items li a span {
+    float: right;
+    color: #e3b612;
+}
+
+#main h4 {
+    background: url(/assets/styleImages/separator-horizontal.png) no-repeat center center;
+    color: #fbfdf8;
+    font-family: 'Helvetica Neue';
+    font-weight: normal;
+    line-height: 30px;
+    margin: 0 0 24px;
+    padding: 0 24px;
+}

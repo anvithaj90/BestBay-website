@@ -1,0 +1,168 @@
+
+
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  //padding-top: 60px;
+}
+
+hr{
+  margin: 5px 0;
+}
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+  width: 440px;
+  height: 100px;
+
+}
+
+.center {
+  text-align: center;
+}
+
+.center h1 {
+  margin-bottom: 20px;
+}
+
+.hero-unit {
+ background-color: #222;
+}
+
+/* typography */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+  text-align: center;
+
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.hero-unit h1 {
+  font-family: "chalkduster";
+  color: #ffffff;
+}
+
+h2 {
+  font-size: 1.7em;
+  letter-spacing: -1px;
+  margin-bottom: 10px;
+  text-align: center;
+  font-weight: normal;
+  color: #aaa;
+  text-align: left;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+/* header */
+
+
+#logo:hover {
+  color: #444;
+  text-decoration: none;
+}
+.item_upload {
+  padding: 15px;
+  width: 600px;
+  margin: 0 auto;
+  border-radius:15px 15px 15px 15px;
+  box-shadow:0 0 10px #779dff;
+  border:5px solid #62ad62;
+  background-color: #f6fffd;
+  font-family:  "Helvetica Neue";
+  font-size: 15px;
+}
+
+.pic_upload{
+  padding: 15px;
+  width: 800px;
+  margin: 0 auto;
+  border-radius:15px 15px 15px 15px;
+  box-shadow:0 0 10px #779dff;
+  border:5px solid #62ad62;
+  background-color: #f6fffd;
+  font-family:  "Helvetica Neue";
+  font-size: 15px;
+}
+.set_price{
+  padding: 15px;
+  width: 800px;
+  margin: 0 auto;
+  border-radius:15px 15px 15px 15px;
+  box-shadow:0 0 10px #779dff;
+  border:5px solid #62ad62;
+  background-color: #f6fffd;
+  font-family:  "Helvetica Neue";
+  font-size: 15px;
+}
+.tabbable {
+  font-family:"Helvetica Neue" ;
+}
+.tabbable .nav-tabs li {
+  padding: 8px 20px;
+  display: block;
+  width: 265px;
+  position: left;
+  -webkit-border-radius: 4px 4px 0 0;
+  -moz-border-radius: 4px 4px 0 0;
+  border-radius: 4px 4px 0 0;
+  font-family: "helvetica neue";
+  font-size: 23px;
+}
+
+.tabbable .nav-tabs li span {
+  position: absolute;
+  width: 20px;
+  text-align: center;
+  font-size: 16px;
+  line-height: 50px;
+  height: 1px;
+  top: 0;
+  right: 5px;
+
+}
+
+/* footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #999;
+  font-size: 0.9em;
+}
+
+footer a {
+  color: #555;
+}
+
+footer a:hover {
+  color: #222;
+}
+
+footer ul {
+  float: right;
+  list-style: none;
+  margin-right: 45px;
+}
+
+footer ul li {
+  float: left;
+  margin-left: 10px;
+}

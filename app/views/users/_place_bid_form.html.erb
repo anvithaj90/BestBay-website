@@ -1,0 +1,20 @@
+<div id="cart_form">
+  <% if item.quantity > 0 %>
+      <% if current_user && item.seller_id != current_user.id %>
+          <%= form_for(current_user.biddings.build(item_id: item.id, bid_price: 0)) do |f| %>
+              <div><%= f.hidden_field :item_id %></div>
+              <div>
+                <h2>Place a Bid</h2><br>
+                <%= f.number_field :bid_price,:min => 1, :max => item.price %>
+                <%= f.submit "Place Bid", class: "btn btn-small btn-primary" %>
+              </div>
+
+          <% end %>
+      <% else %>
+
+      <% end %>
+  <% else %>
+      <% #add new logic to disable showing the item in the search results and detail show page? %>
+
+  <% end %>
+</div>

@@ -1,0 +1,160 @@
+<!--JS method that handles category picker behaviors -->
+
+<script language="JavaScript" type="text/javascript" xmlns="http://www.w3.org/1999/html">
+    var categoryStructure = <%= raw categoryArray.to_json %>
+            function getSubCategories() {
+                var parentSelector = document.getElementById("parentCategoriesSelector");
+                var subCateSelector = document.getElementById("subCategoriesSelector");
+
+                //Get the corresponding sub-categories
+
+                var subCategories = categoryStructure[parentSelector.selectedIndex];
+
+
+                //clear the sub-category selector
+                subCateSelector.length = 1;
+
+                //insert the sub-categories into the selector
+                for (var i = 0; i < subCategories.length; i++) {
+                    subCateSelector[i] = new Option(subCategories[i].name, subCategories[i].id);
+                }
+            }
+</script>
+<br>
+<div class= "basic">
+<% if current_user.seller_type == 0 || current_user.seller_type.nil? %>
+    I'm sorry, You have to purchase a seller package to sell items on MobiDr
+
+    <%= form_tag({:controller => "users", :action => "save_seller_type"}, :method => "post") do %>
+
+        <div><%= hidden_field_tag :user_id, current_user.id %></div>
+        <div>
+          <table class="table table-striped">
+            <thead>
+            <tr>
+              <th>Seller Packages:</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td><label class="radio">
+                <input type="radio" name="seller_type" id="optionsRadios1" value="1" checked>
+                Basic Seller (2 items) - <font size="2" color="#5f9ea0"><b>$10 per year</b></font>
+              </label></td>
+            </tr>
+            <tr>
+              <td><label class="radio">
+                <input type="radio" name="seller_type" id="optionsRadios2" value="2" checked>
+                Premium Seller (3-10 items)- <font size="2" color="#5f9ea0"><b>$20 per year</b></font>
+              </label></td>
+            </tr>
+            <tr>
+              <td><label class="radio">
+                <input type="radio" name="seller_type" id="optionsRadios3" value="3" checked>
+                Super Seller (Unlimited items)- <font size="2" color="#5f9ea0"><b>$50 per year</b></font>
+              </label></td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div>
+          <font size="3" color="red"><b>Clicking on Update seller will deduct the specified amount from your Paypal account, Kindly be sure before doing so!</b></font>
+          </br>  Password * required</br>
+          <%= password_field_tag :password %>
+        </div>
+
+        <%= submit_tag "Update Seller", class: "btn btn-small btn-primary" %>
+    <% end %>
+<% else %>
+
+       <%= form_tag({:controller => "items", :action => "save_basic"}, :method => "post") do %>
+            <div>
+              <% if @item.errors.any? %>
+                  <div id="error_explanation">
+                    <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
+                    <% @item.errors.full_messages.each do |msg| %>
+                        <li><%= msg %></li>
+                    <% end %>
+                  </div>
+              <% end %>
+            </div>
+
+            <div class="tabbable"> <!-- Only required for left/right tabs -->
+              <div class="nav nav-tabs">
+                <li class="active"><a href="" data-toggle="tab">Basic Information <span>&raquo;</span></a></li>
+                <li><a href="" data-toggle="tab">Upload Pictures <span>&raquo;</span></a></li>
+                <li><a href="" data-toggle="tab">Set price and Confirm</a></li>
+              </div>
+            </div>
+        <span width="98%" color=#987cb9 SIZE=4 />
+    <div class="item_upload">
+
+                <div class="field">
+                  </br>  Item Name   *required </br>
+                  <%= text_field_tag :name %>
+                </div>
+
+                <div class="descriptionfield">
+                  General description   *required  </br>
+                  <%= text_area_tag :general_description %>
+                </div>
+
+                <div class="field">
+                  Quantity   *required </br>
+                  <% seller_quantity = 0 %>
+                  <% current_user.items.each do |item| %>
+                      <% if item.seller_id == current_user.id %>
+                          <% seller_quantity += item.quantity %>
+                      <% end %>
+                  <% end %>
+                </div>
+
+                <% if (current_user.seller_type == 1) %>
+                    <% max_quantity = 2 %>
+                <% elsif (current_user.seller_type == 2) %>
+                    <% max_quantity = 10 %>
+                <% elsif (current_user.seller_type == 3) %>
+                    <% max_quantity = 100 %>
+                <% else %>
+                    <% max_quantity = 0 %>
+                <% end %>
+                <% max_quantity = max_quantity - seller_quantity %>
+
+
+                <% if max_quantity == 0 %>
+                    Reached maximum selling quantity!
+                <% else %>
+                    <%= number_field_tag :quantity, nil, :min => 1, :max => max_quantity %>
+                <% end %>
+
+
+                <div>
+                  Select Categories<br>
+
+                  <select id="parentCategoriesSelector" name="parentCategoryId" onChange="getSubCategories()">
+                    <% parentCategories.each do |cate| %>
+                        <option value=<%= cate.id %>><%= cate.name %></option>
+                    <% end %>
+                  </select>
+
+                  <select id="subCategoriesSelector" name="subCategoryId">
+                    <% parentCategories[0].children_categories.each do |sub_cate| %>
+                        <option value=<%= sub_cate.id %>><%= sub_cate.name %></option>
+                    <% end %>
+                  </select>
+                </div>
+
+                <div class="actions">
+                  <%= submit_tag "Next", class: 'btn btn-info' %>
+                </div>
+    </div>
+        <% end %>
+<% end %>
+</div>
+        <script type="text/javascript">
+            $('#myTab a').click(function (e) {
+                e.preventDefault();
+                $(this).tab('show');
+            })
+        </script>

@@ -1,0 +1,39 @@
+<div id="grid_mode">
+  <% if items.count != 0 %>
+      <ul>
+        <% items.each do |item| %>
+            <li>
+
+                <%= image_tag item.photo.url() %> <span class="icon"></span>
+                <span>$<%= item.price %></h5></span>
+              <a href="/items/<%= item.id %>"><%= item.name %> </a><em></em>
+                <% @item = item %>
+
+                <% if signed_in? %>
+                    <%= render 'users/watch_form' %>
+                <% else %>
+                    <%= link_to 'Add to Watchlist', new_user_session_path, class: "btn btn-small btn-warning" %>
+                <% end %>
+
+              <% if signed_in? %>
+                  <% if item.seller_id != current_user.id      %>
+                      <%= render 'users/add_to_cart' if signed_in? %>
+                  <% end %>
+              <% else %>
+                  <%= link_to 'Add to Cart', new_user_session_path, class: "btn btn-small btn-primary" %>
+
+              <% end %>
+
+            </li>
+
+        <% end %>
+      </ul>
+
+      </div>
+  <% else %>
+      <b>No results found</b>
+  <% end %>
+  </div>
+
+
+

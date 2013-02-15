@@ -1,0 +1,46 @@
+<div id="category_panel">
+  <h4>Categories</h4>
+  <ul>
+    <% if selected_parent_cate_id == 0 %>
+        <li style="font-weight: bold;">All</li>
+    <% else %>
+        <li>
+          <%= link_to "All", {:controller => "items", :action => "index",
+                              :mode => mode, :search => search},
+                      :remote => true %>
+        </li>
+    <% end %>
+    <% parentCategories.each do |cate| %>
+        <% if selected_parent_cate_id == cate.id %>
+            <li style="font-weight: bold;">
+              <%= cate.name %>
+            </li>
+        <% else %>
+            <li>
+              <%= link_to cate.name, {:controller => "items", :action => "index",
+                                      :category => cate.id, :mode => mode, :search => search},
+                          :remote => true %>
+            </li>
+        <% end %>
+    <% end %>
+  </ul>
+
+  <% if selected_parent_cate_id != 0 %>
+      <h4>Sub-Categories</h4>
+      <ul>
+        <% subCategories.each do |sub_cate| %>
+            <% if selected_sub_cate_id == sub_cate.id %>
+                <li style="font-weight: bold;">
+                  <%= sub_cate.name %>
+                </li>
+            <% else %>
+                <li>
+                  <%= link_to sub_cate.name, {:controller => "items", :action => "index",
+                                              :category => sub_cate.id, :mode => mode, :search => search},
+                              :remote => true %>
+                </li>
+            <% end %>
+        <% end %>
+      </ul>
+  <% end %>
+</div>

@@ -1,0 +1,89 @@
+<div id="product">
+  <div id="showpage">
+    <div id="image">
+      <div id = "showphoto">
+        <img src="<%= @item.photo%>" alt="view">
+      </div>
+    </div>
+
+    <div id="description">
+      <h2><span>
+        <%= number_to_currency(@item.price)%> <br><%= number_to_currency(@item.bidding_start_price)%></span><%= @item.name %></h2>
+      <%= pluralize @item.reputation_for(:votes).to_i, "People like" %>
+
+      <% if @item.seller_id != current_user %>
+          <%= link_to "Like   ", vote_item_path(@item, type: "Like"), method: "post", class:"btn btn-cart"%>
+          <%= link_to "Dislike", vote_item_path(@item, type: "Dislike"), method: "post",class:"btn btn-cart2" %>
+      <% end %>
+      <br>
+      <p>Description: <%= @item.general_description%></p>
+
+      <% if @item.quantity == 0 %>
+      <% else %>
+          Quantity: <%=  @item.quantity %>
+      <% end %>  <br>
+      Seller: <%= User.find_by_id(@item.user_id).name %>
+
+
+      <% if signed_in? %>
+          <%= render 'users/watch_form' if signed_in? %>
+      <% else %>
+          <%= link_to 'Add to Watchlist', new_user_session_path, class: "btn btn-watchlist" %>
+      <% end %>
+
+      <p>Highest Bid: <%=  if @item.current_highest_bid
+                             @item.current_highest_bid.bid_price
+                            end%></p>
+      <p>Highest Bidder: <%=  if @item.current_highest_bid
+                                @item.current_highest_bid.name
+                              end%></p>
+    </div>
+
+    <div id="bidding">
+      <% if signed_in? %>
+          <br>
+          <%= render partial: 'users/cart_form', locals: {:item => @item} %>
+      <% else %>
+          <%= link_to 'Add to Cart', new_user_session_path, class: "btn btn-cart" %>
+      <% end %>
+
+      <% if @item %>
+          <%= render partial: 'users/place_bid_form', locals: {:item => @item} %>
+      <% else %>
+          <%= link_to 'Add to Shopping Cart', new_user_session_path, class: "btn btn-cart" %>
+      <% end %>
+      <h5>Bidding Start Price:</h5>
+      <%= number_to_currency(@item.bidding_start_price)%> <br>
+    </div>
+  </div>
+</div>
+<span id="shadow"></span>
+<div class="footer">
+  <% if @item %>
+    <div class="row" id="bidding_history">
+     <h4><span>Bidding History</span></h4>
+     <% @item.biddings.each do |bid| %>
+     <ul>
+        <li><p><%= bid.bidder.name %> bidded at <%= bid.bid_price %></p></li>
+     </ul>
+     <% end %>
+    </div>
+  <% end %>
+
+  <h4><span>Similar Items</span></h4>
+  <ul class="items">
+    <li>
+      <a href="product.php"> <img src="<%= @item.photo%>" alt="Img"> <span>$81.50</span> A </a>
+    </li>
+    <li>
+      <a href="product.php"> <img src="<%= @item.photo%>" alt="Img"> <span>$28.50</span> B </a>
+    </li>
+    <li>
+      <a href="product.php"> <img src="<%= @item.photo%>" alt="Img"> <span>$18.50</span> C  </a>
+    </li>
+    <li>
+      <a href="product.php"> <img src="<%= @item.photo%>" alt="Img"> <span>$2.50</span> D </a>
+    </li>
+  </ul>
+</div>
+<%= link_to 'Back', items_path %>

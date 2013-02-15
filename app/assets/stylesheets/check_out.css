@@ -1,0 +1,130 @@
+#checkout {
+    display: inline-block;
+    padding: 0 12px 30px;
+    *padding: 0 12px;/** Needed for IE7 **/
+}
+#checkout h4 span {
+    background-color: #e6b614;
+}
+#checkout table {
+    color: #d3d1d2;
+    font-family: 'Trebuchet MS';
+    width: 900px;
+    margin: 0 auto 90px;
+}
+#checkout table th {
+    color: #636a86;
+    font-size: 14px;
+    line-height: 24px;
+}
+#checkout table tr th:first-child {
+    padding-left: 50px;
+    text-align: left;
+}
+#checkout table tr td {
+    color: #636a86;
+    width: 120px;
+    padding: 6px 0 36px;
+    text-align: center;
+}
+#checkout table tr td:first-child {
+    width: 520px;
+    text-align: left;
+}
+#checkout table tr td img {
+    float: left;
+    margin: 18px 18px 18px 40px;
+}
+#checkout table tr td b {
+    display: block;
+    font-size: 13px;
+    margin-top: 18px;
+}
+#checkout table tr td p {
+    font-size: 12px;
+    line-height: 18px;
+    margin: 0;
+    padding-bottom: 30px;
+}
+#checkout table tr td input.txtfield {
+    color: #636a86;
+    font-weight: bold;
+    line-height: 24px;
+    height: 24px;
+    width: 32px;
+    border: 0;
+    margin-left: 20px;
+    padding: 0 5px;
+    text-align: right;
+}
+#checkout table tr td a.minus, #checkout table tr td a.plus {
+    float: right;
+    background-position: 0 0;
+    height: 14px;
+    width: 14px;
+    margin: 5px 20px 5px 2px;
+}
+#checkout table tr td a.plus {
+    background-position: -33px 0;
+    margin-right: 2px;
+}
+#checkout table tr td a.minus:hover, #checkout table tr td a.plus:hover {
+    opacity:0.8;
+    filter:alpha(opacity=80);
+}
+#checkout table tbody tr td.last {
+    font-weight: bold;
+}
+#checkout table tbody tr td.last div {
+    color: #e6b614;
+    position: relative;
+}
+#checkout table tbody tr td.last div a {
+    background-color: #b8dcdd;
+    color: #809ea0;
+    display: block;
+    font-size: 15px;
+    font-style: italic;
+    line-height: 24px;
+    height: 24px;
+    width: 114px;
+    text-decoration: none;
+    position: absolute;
+    bottom: -60px;
+    left: -50px;
+}
+#checkout table tbody tr td.last div a:hover {
+    background-color: #c7eeef;
+}
+#checkout a.proceed-btn {
+    float: right;
+    background-color: #e5b614;
+    color: #fff;
+    font-family: 'HammersmithOneRegular';
+    font-size: 20px;
+    font-style: italic;
+    padding: 6px 12px;
+    text-decoration: none;
+}
+#checkout a.proceed-btn:hover {
+    background-color: #d2941d;
+}
+#checkout table tr td img{
+    float: left;
+    margin: 18px 18px 18px 40px;
+    width: 78px;
+    height: 78px;
+}
+
+#checkout table tr td b{
+    display: block;
+    font-size: 13px;
+    margin-top: 18px;
+    color: #5549fd;
+}
+#checkout .btn-warning {
+    background-color: #e5b614;
+    color: #000000;
+    padding: 2px 5px 0;
+}
+

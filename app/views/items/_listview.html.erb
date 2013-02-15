@@ -1,0 +1,71 @@
+  <div id="itemlist_mode">
+      <table>
+        <thead>
+        <tr>
+          <th>Photo</th>
+          <th>Name</th>
+          <th>Description</th>
+          <th></th>
+        </tr>
+        </thead>
+
+        <tbody>
+
+        <% if items.count != 0 %>
+            <% items.each do |item| %>
+                <tr>
+                 <td> <%= image_tag item.photo.url() %></td>
+                 <td><a><%= link_to item.name, item %></a></td>
+                  <td>
+
+                    <b><%= item.general_description %></b>
+                      <b><%= number_to_currency(item.price) %></b>
+                      <%= item.reputation_for(:votes).to_i %> like(s) by people
+
+                  </td>
+
+                  <td>
+                    <% @item = item %>
+
+                    <% if signed_in? %>
+
+                        <%= render 'users/watch_form' if signed_in? %>
+                    <% else %>
+                        <%= link_to 'Add to Watchlist', new_user_session_path, class: "btn btn-small btn-primary" %>
+                    <% end %>
+
+
+                    <% if signed_in? %>
+                        <% if item.seller_id != current_user.id      %>
+                        <%= render 'users/add_to_cart' if signed_in? %>
+                        <% end %>
+                    <% else %>
+                        <%= link_to 'Add to Cart', new_user_session_path, class: "btn btn-small btn-primary" %>
+
+                    <% end      %>
+
+                  </td>
+
+                  <% if false %>
+                      <!-- add user authentication here-->
+                      <td><%= link_to 'Show', item %></td>
+                      <td><%= link_to 'Edit', edit_item_path(item) %></td>
+                      <td><%= link_to 'Destroy', item, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+                  <% end %>
+
+                </tr>
+               <% end %>
+        <% else %>
+            <b> No results found </b>
+        <% end %>
+
+        </tbody>
+      </table>
+      <hr>
+    </div>
+
+
+
+
+
+

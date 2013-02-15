@@ -1,0 +1,12 @@
+<% @user ||= current_user %>
+<% if @user.followed_items.count > 0 %>
+<ul class="items">
+  <% @user.followed_items.each do |item| %>
+      <li>
+        <a href="/items/<%= item.id %>"> <img src="<%= item.photo.url() %>" alt="Img"> <span><%= item.price %></span> <%= item.name %> </a>
+      </li>
+  <% end %>
+</ul>
+<% else %>
+    <h1>Your Watchlist is Empty</h1>
+<% end %>

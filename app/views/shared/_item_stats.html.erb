@@ -1,0 +1,15 @@
+<% @item ||= current_item %>
+<div class="stats">
+  <a href="<%= following_category_path(@item) %>">
+    <strong id="following" class="stat">
+      <%= @item.followed_categories.count %>
+    </strong>
+    following
+  </a>
+  <a href="<%= followers_category_path(@item) %>">
+    <strong id="followers" class="stat">
+      <%= @item.followers.count %>
+    </strong>
+    followers
+  </a>
+</div>

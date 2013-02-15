@@ -1,0 +1,17 @@
+<footer class="footer">
+  <nav>
+    <ul>
+      <li><%= link_to "About us", "/static_pages/about" %></li>
+      <li><%= link_to "Contact", "/static_pages/about" %></li>
+      <li><%= link_to "MobiDr", "/static_pages/about" %></li>
+    </ul>
+  </nav>
+</footer>
+
+<script>
+    $(".slidingDiv").hide();
+    $(".show_hide").show();
+    $('.show_hide').click(function(){
+        $(".slidingDiv").slideToggle();
+    });
+</script>

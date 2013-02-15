@@ -1,0 +1,51 @@
+<% @user ||= current_user %>
+<div id="cart">
+  <% if user_signed_in? %>
+      <h7>Items in Cart: <%= current_user.shopping_carts.sum('quantity') %> </h7>
+     <% subtotal = 0 %>
+      <% if current_user.shopping_carts.empty? %>
+          <h6> Cart is empty. </h6>
+      <% else %>
+          <table id="cart_items">
+            <tr>
+              <th></th>
+              <th>Name</th>
+              <th>Price</th>
+              <th>Quantity</th>
+            </tr>
+            <% @user.cart_items.each do |item| %>
+            <%   cart_item = @user.shopping_carts.find_by_item_id(item)     %>
+                <% if item.seller_id != current_user.id %>
+
+             <tr>
+               <td><a href="/items/<%= item.id %>">
+                 <img src="<%= item.photo.url()%>" alt="Thumbnail">
+                </a>
+                  </td>
+               <td>
+                <b>  <%= link_to item.name, item %> </b></td>
+                  <td> <b><%= number_to_currency(item.price) %> </b></td>
+                  <td> <b><%= cart_item.quantity %></b></td>
+
+                  <td>
+                    <%= render partial: 'users/remove_from_cart', locals: {item: item} %>
+                  </td>
+
+               <% subtotal += (item.price * cart_item.quantity) %>
+
+          <% end %>
+            </tr>
+
+            <% end %>
+          </table>
+
+          <h7> Subtotal: <%= number_to_currency(subtotal) %> </h7>
+          <h7><%= link_to "Checkout", check_out_path %></h7>
+
+
+<% end %>
+  <% else %>
+      <li><%= link_to "Sign in", new_user_session_path %></li>
+  <% end %>
+
+</div>

@@ -1,0 +1,12 @@
+
+<div id="contents">
+  <div id="checkout">
+    <td class="last"><div>
+
+    <%= form_for(current_user.shopping_carts.find_by_item_id(item),
+             html: { method: :delete }, remote: true) do |f| %>
+          <%= f.submit "Delete", class: "btn btn-small btn-warning" %>
+    <% end %>
+    </div></td>
+  </div>
+</div>

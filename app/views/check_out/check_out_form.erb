@@ -1,0 +1,59 @@
+<div id="checkout">
+  <h4><span>Shopping Cart</span></h4>
+  <table>
+    <thead>
+    <tr>
+      <th>Item</th>
+      <th>Quantity</th>
+      <th>Option</th>
+    </tr>
+    </thead>
+
+
+    <tbody>
+    <tr>
+
+      <% @user.cart_items.each do |item| %>
+          <%   cart_item = @user.shopping_carts.find_by_item_id(item)     %>
+          <% if item.seller_id != current_user.id %>
+
+            <tr>
+              <td> <%= link_to item.name, item %></td>
+              <td> <%= number_to_currency(item.price) %></td>
+              <td> <%= cart_item.quantity %></td>
+
+              <td>
+                <%= render partial: 'users/remove_from_cart', locals: {item: item} %>
+              </td>
+
+              <td><img src="images/leather-boots3.jpg" alt="Thumbnail"> <b>Hukbalahap Boots</b>
+              <td>
+                <div id = "showphoto">
+                <img src="<%= @item.photo%>" alt="view">
+                </div>
+                <b><% link_to item.name, item %>></b>
+                <p>
+                  <%= item.general_description %>
+                </p></td>
+              <td><a href="checkout.html" class="minus"></a> <a href="checkout.html" class="plus"></a>
+                <input type="text" value="1" class="txtfield"></td>
+              <td class="last"><div>
+                <%= number_to_currency(item.price) %> <a href="checkout.html">Delete</a>
+              </div></td>
+            </tr>
+
+
+        <% end %>
+
+        </tbody>
+        </table>
+
+        <% subtotal += (item.price * cart_item.quantity) %>
+
+
+    <% end %>
+
+
+    <h7><%= link_to "Checkout", @user.shopping_carts.first.paypal_url(shopping_carts_confirm_url) %></h7>
+
+    </div>

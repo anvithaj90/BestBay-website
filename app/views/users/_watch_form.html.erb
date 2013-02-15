@@ -1,0 +1,13 @@
+<% #unless current_user?(@user) %>
+<%
+    id = "watch_form"
+    id += @item.id.to_s
+    puts id
+%>
+    <div id="<%= id %>">
+      <% if current_user.following?(@item) %>
+          <%= render 'users/remove_from_watch' %>
+      <% else %>
+          <%= render 'users/add_to_watch' %>
+      <% end %>
+    </div>

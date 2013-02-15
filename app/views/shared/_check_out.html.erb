@@ -1,0 +1,63 @@
+<head>
+  <meta charset="UTF-8">
+  <title>RubberNLaces Website Template - Checkout</title>
+  <link rel="stylesheet" href="css/style.css" type="text/css">
+  <link rel="stylesheet" type="text/css" href="/preview/shared/previews.css" />
+  <script>
+
+      var _gaq = [['_setAccount', 'UA-241068-1'], ['_trackPageview']];
+      !function(d, t)
+      {
+          var g = d.createElement(t),
+                  s = d.getElementsByTagName(t)[0];
+          g.async = true;
+          g.src = ('https:' == d.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          s.parentNode.insertBefore(g, s);
+      }
+              (document, 'script');
+
+  </script>
+  <script src="/js/jquery/jquery-1.5.2.min.js"></script>
+
+  <script src="/js/xenforo/xenforo.js?_v=bba17b4a"></script>
+</head>
+
+    <div id="contents">
+      <div id="checkout">
+        <table>
+          <thead>
+          <tr>
+            <th></th>
+            <th>Quantity</th>
+            <th>Subtotal</th>
+            <th>Option</th>
+          </tr>
+          </thead>
+
+          <tr>
+            <% @user.cart_items.each do |item| %>
+                <% cart_item = @user.shopping_carts.find_by_item_id(item) %>
+                <% if item.seller_id != current_user.id %>
+
+                  <tr>
+                    <td><a href="/items/<%= item.id %>"><img src="<%= item.photo.url() %>" alt="Thumbnail"> </a>
+                      <b id="item_des">
+                        <h5><%= item.name %><h5><br>
+                        <%= item.general_description %>
+                      </b></td>
+                    <td><b><%= cart_item.quantity %> items in your cart</b></td>
+                    <td>
+                      <b><br><br><br><br><br><%= number_to_currency(item.price * cart_item.quantity) %></b>
+                      <%= render partial: 'users/remove_from_cart', locals: {item: item} %>
+                    </td>
+                  </tr>
+              <% end %>
+          <% end %>
+        </table>
+        <a href="<%= @user.shopping_carts.first.paypal_url(shopping_carts_confirm_url) %>" class="proceed-btn">Proceed to Checkout</a>
+      </div>
+    </div>
+    <div id="footer">
+      <div class="background">
+      </div>
+    </div>

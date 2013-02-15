@@ -1,0 +1,84 @@
+<div id="profile">
+  <div id="profile_pic">
+    <div>
+      <%= image_tag current_user.photo.url(), :size => "200x200" %>
+    </div>
+  </div>
+  <div class="section">
+    <h2> Username: <%= current_user.name %></h2>
+    <h2> Email: <%=  current_user.email %></h2>
+    <p>
+      Bio:
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam venenatis cursus gravida. Suspendisse ut ligula tristique velit blandit vel sit amet ipsum. Nam accumsan turpis id mauris fermentum pharetra. Cras interdum, risus et dictum bibendum, arcu tellus con
+    </p>
+  </div>
+  <div id="seller_action">
+    <%= link_to "Edit Profile", {:controller => 'users', :action => 'profile_info'}, class: 'btn edit-btn' %>
+    <span id="action-separator"></span>
+    <% if current_user.seller_type == 0 || current_user.seller_type.nil?  %>
+        <h1><%= link_to "Become a Seller!", new_item_path %></h1>
+    <% else %>
+        <% if current_user.seller_type == 1 %>
+            <h1>Basic Seller</h1>
+        <% elsif current_user.seller_type == 2 %>
+            <h1>Premium Seller</h1>
+        <% elsif current_user.seller_type == 3 %>
+            <h1>Super Seller</h1>
+        <% end %>
+    <% end %>
+  </div>
+  <span id="decoration"></span>
+</div>
+
+<div id="buyerlists">
+  <h4><span>Watchlist</span></h4>
+  <%= render "shared/watchlist" %>
+
+  <% if current_user.shopping_carts.empty? %>
+      <h6> Cart is empty. </h6>
+  <% else %>
+<h4><span>Shopping Cart</span></h4>
+  <%= render "shared/check_out" %>
+      <% end %>
+</div>
+
+<% if current_user.seller_type == 0 || current_user.seller_type.nil? %>
+<% else %>
+<div id="seller_panel">
+  <div class="background">
+    <div id="item_listing">
+    <% if current_user.items.count > 0 #user has items on sale  %>
+        <table>
+          <thead>
+          <tr>
+            <th>Item List</th>
+            <th>Quantity</th>
+            <th>Rating</th>
+            <th>Price</th>
+          </tr>
+          </thead>
+          <tbody>
+          <% current_user.items.each do |item| %>
+          <tr>
+            <td><a href="/items/<%= item.id %>"> <img src="<%= item.photo.url() %>" alt="Thumbnail"> <b><%= item.name %></b>
+              <p>
+                <%= item.general_description %>
+              </p></a></td>
+            <td><%= item.quantity %></td>
+            <td><%= item.reputation_for(:votes).to_i %></td>
+            <td class="last"><div>
+              <%= number_to_currency(item.price)%>
+              <%= link_to 'Edit', edit_item_path(item.id), id:"edit_item_btn" %>
+              <%= link_to 'Delete', item, method: :delete %>
+            </div></td>
+          </tr>
+          <% end %>
+          </tbody>
+        </table>
+    <% else %>
+    <%= link_to "You sold out!" %>
+    <% end %>
+    </div>
+  </div>
+</div>
+<% end %>

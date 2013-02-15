@@ -1,0 +1,13 @@
+<% #unless current_user?(@user) %>
+<div id="cart_form">
+  <% if item.quantity > 0 %>
+      <% if item.seller_id != current_user.id %>
+        <%= render 'users/add_to_cart' %>
+      <% else %>
+
+      <% end %>
+<% else %>
+          <% #add new logic to disable showing the item in the search results and detail show page? %>
+      <h2>Sorry, this item is out of stock!</h2>
+  <% end %>
+</div>

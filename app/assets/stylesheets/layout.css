@@ -1,0 +1,189 @@
+body {
+    background: #ebebeb url(/assets/styleImages/bg-body.jpg) repeat-x left top;
+    margin: 0;
+}
+#background {
+    background: url(/assets/styleImages/bg-body2.png) repeat-x left top;
+}
+#page {
+    background: url(/assets/styleImages/bg-page.jpg) no-repeat center top;
+    width: 924px;
+    margin: 0 auto;
+    padding: 0 18px;
+}
+img {
+    border: 0;
+}
+#footer {
+    background-color: #0d1528;
+    background-position: 0 -57px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+
+}
+
+#footer div.background {
+    background: #202b41 url(/assets/styleImages/bg-footer.jpg) no-repeat center 18px;
+    width: 876px;
+    margin: 0 auto;
+    padding: 70px 24px 30px;
+}
+#footer .navigation {
+    color: #616b84;
+    display: inline-block;
+    list-style: none;
+    margin: 0 0 30px;
+    padding: 0;
+}
+
+/*------------------------------ Sprites ------------------------------*/
+#navigation, #seller_panel {
+    background: url(/assets/styleImages/bg-strips.png) repeat-x;
+}
+#navigation #secondary li:last-child a, #connect li a {
+    background: url(/assets/styleImages/icons.png) no-repeat;
+}
+#adbox a.button,#search .button, #stocks ul li a.preview span.icon, #checkout table tr td a.plus, #checkout table tr td a.minus {
+    display: block;
+}
+
+
+/*------------------------------ HEADER ------------------------------*/
+#header {
+    background: url(/assets/styleImages/bg-header.png) no-repeat center top;
+    margin-bottom: 20px;
+}
+/** Logo **/
+#logo {
+    height: 100px;
+    width: auto;
+}
+#logo a {
+    display: block;
+    height: 53px;
+    width: 386px;
+    margin: 0 auto;
+    padding: 23px 0;
+}
+/** Navigation **/
+#navigation {
+    background-position: 0 0;
+    color: #527b99;
+    height: 45px;
+    margin: 0;
+    padding: 0 10px;
+}
+#navigation ul {
+    display: inline-block;
+    list-style: none;
+    margin: 0;
+    padding: 8px 0;
+}
+#navigation li {
+    float: left;
+    font-size: 14pt;
+    margin: 0 18px;
+    padding-top: 5px;
+    text-align: center;
+}
+#navigation a {
+    font-family: 'helvetica neue';
+    color: #527b99;
+    font-size: 15px;
+    text-decoration: none;
+    text-shadow: 1px 1px #e5f0f2;
+}
+
+#navigation #logo_text {
+    font-family: "chalkduster";
+    font-size: 20px;
+}
+#navigation a:hover, #primary li.selected a, #navigation #primary li.highlight a:hover {
+    background: url(/assets/styleImages/bg-menu-selected.gif) no-repeat center top;
+    color: #21c1c5;
+    padding-top: 5px;
+}
+#navigation ul#primary {
+    float: left;
+    margin-right: 80px;
+    *width: 560px;/** Needed for IE7 **/
+}
+#navigation ul#secondary {
+    float: right;
+    margin-right: 30px;
+    *width: 560px;/** Needed for IE7 **/
+}
+#navigation #primary li.highlight a {
+    color: #fafbf6;
+    font-size: 16px;
+    text-shadow: 1px -1px #9ebabb;
+}
+#navigation ul#secondary {
+    *width: 254px;/** Needed for IE7 **/
+}
+#navigation #secondary li:last-child {
+    margin-right: 10px;
+}
+#navigation ul#secondary li:last-child a {
+    background-position: right 0;
+    padding-right: 48px;
+}
+#navigation ul#secondary li:last-child a:hover {
+    padding-top: 0;
+}
+
+/*------------------------------ CONTENTS ------------------------------*/
+#contents {
+    margin: 0 0 60px;
+}
+
+#contents h4 span {
+    background-color: #97b847;
+    display: block;
+    height: 29px;
+    width: 171px;
+    padding: 4px 0 2px;
+    text-align: center;
+    margin-left: 20px;
+}
+
+
+/*------------------------------ About Page ------------------------------*/
+#faq {
+    color: #606c84;
+    padding: 0 24px;
+}
+#faq p {
+    font-family: 'Helvetica Neue';
+    font-size: 14px;
+    line-height: 24px;
+    margin: 0;
+    padding: 0 0 24px;
+}
+#faq p b {
+    color: #5f6d87;
+    display: block;
+    font-family: 'Helvetica';
+    font-size: 16px;
+    font-weight: normal;
+}
+#faq p a, #checkout p a {
+    color: #606c84;
+}
+#faq p a:hover, #checkout p a:hover {
+    color: #91a4ce;
+}
+
+#about h4 {
+    background: url(/assets/styleImages/separator-horizontal.png) no-repeat center center;
+    color: #FBFDF8;
+    font-family: 'Helvetica Neue';
+    font-weight: normal;
+    line-height: 30px;
+    margin: 0 0 24px;
+    padding: 0 24px;
+}
+#team img{
+    margin-left: 141px;
+}

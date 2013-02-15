@@ -1,0 +1,78 @@
+<%= form_tag({:controller => "items", :action => "create"}, :method => "post") do %>
+
+    <% if @item.errors.any? %>
+        <div id="error_explanation" xmlns="http://www.w3.org/1999/html">
+          <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
+
+          <ul>
+            <% @item.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="tabbable"> <!-- Only required for left/right tabs -->
+      <ul class="nav nav-tabs">
+        <li><a href="#tab1" data-toggle="tab">Basic Information <span>&raquo;</span></a></li>
+        <li><a href="#tab2" data-toggle="tab">Upload Pictures<span>&raquo;</span></a></li>
+        <li class="active"><a href="#tab3" data-toggle="tab">Set price and Confirm</a></li>
+      </ul>
+      <div class="tab-content">
+        <div class="tab-pane active" id="tab1">
+
+        </div>
+        <div class="tab-pane" id="tab2">
+        </div>
+      </div>
+    </div>
+
+    <% if @item.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
+
+          <ul>
+            <% @item.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="set_price">
+    <div class="field">
+      </br>  Item Name    </br>
+      <%= @item.name %>
+    </div>
+
+
+    <div class="field">
+      General description      </br>
+      <%= @item.general_description %>
+    </div>
+
+    <div class="field">
+      Quantity      </br>
+      <%= @item.quantity %>
+    </div>
+
+
+    <div class="field">
+
+      Buy Now Price <br >
+
+      <%= number_field_tag 'price', :value => @item.price,:min => 0 %>    </br>
+
+      <label class="checkbox inline">
+        <input type="checkbox" id="inlineCheckbox1" value="option1"> Start bidding price </br>
+        <%= number_field_tag 'bidding_start_price', :value => @item.bidding_start_price,:min => 0 %>
+      </label>
+
+    </div>
+
+    <div class="actions">
+      <%= submit_tag 'Submit', class: 'btn btn-warning' %>
+    </div>
+
+   </div>
+<% end %>

@@ -1,0 +1,207 @@
+/* grid */
+#grid_mode {
+    overflow: hidden;
+}
+#grid_mode ul {
+    display: inline-block;
+    list-style: none;
+    width: 940px;
+    margin: 0 24px;
+    padding: 0;
+}
+#grid_mode ul li {
+    float: left;
+    color: #646b85;
+    font-family: 'HammersmithOneRegular';
+    font-size: 18px;
+    line-height: 24px;
+    width: 169px;
+    margin: 0 66px 60px 0;
+    position: relative;
+}
+#grid_mode ul li img {
+    border: 1px solid #d2cecf;
+    height: 170px;
+    width: 170px;
+}
+#grid_mode ul li em {
+    color: #959394;
+    display: block;
+    font-size: 12px;
+}
+#grid_mode ul li a {
+    background-color: #b8dcdd;
+    color: #7c9e9f;
+    font-size: 18px;
+    font-style: italic;
+    padding: 2px 4px 0;
+    text-decoration: none;
+}
+#grid_mode ul li b {
+    display: block;
+    font-size: 15px;
+    margin-top: 18px;
+    color: #003bb3;
+
+}
+
+#grid_mode ul li a:hover {
+    background-color: #c7eeef;
+}
+#grid_mode ul li span {
+    float: right;
+    color: #e3b612;
+}
+
+#grid_mode ul li a.preview {
+    background-color: transparent;
+    display: block;
+    height: 171px;
+    width: 171px;
+    padding: 0;
+}
+#grid_mode ul li a.preview span.icon {
+    background-position: -63px 0;
+    display: block;
+    height: 12px;
+    width: 15px;
+    padding: 0;
+    position: absolute;
+    top: 156px;
+    right: 0;
+}
+
+/*------------------------------ lIsts ------------------------------*/
+#itemlist_mode {
+    display: inline-block;
+    padding: 0 12px 30px;
+    *padding: 0 12px;/** Needed for IE7 **/
+}
+#itemlist_mode h4 span {
+    background-color: #e6b614;
+}
+#itemlist_mode table {
+    color: #d3d1d2;
+    font-family: 'helvetica neue';
+    width: 850px;
+}
+#itemlist_mode table th {
+    color: #C0E073;
+    font-size: 18px;
+    line-height: 24px;
+    text-transform: uppercase;
+    text-align: left;
+}
+#itemlist_mode table tr th:first-child {
+    padding-left: 50px;
+    text-align: left;
+}
+#itemlist_mode table tr td {
+    color: #636a86;
+    width: 250px;
+    padding: 6px 0 36px;
+    text-align: left;
+}
+#itemlist_mode table tr td:first-child {
+    width: 800px;
+    text-align: left;
+}
+#itemlist_mode table tr td img {
+    float: left;
+    margin: 18px 18px 18px 40px;
+    width: 200px;
+    height: 200px;
+}
+#itemlist_mode table tr td b {
+    display: block;
+    font-size: 13px;
+    margin-top: 18px;
+    color: #003bb3;
+
+}
+#itemlist_mode table tr td p {
+    font-size: 12px;
+    line-height: 18px;
+    margin: 0;
+    padding-bottom: 30px;
+    color: #636a86;
+}
+
+#itemlist_mode table tr td u {
+    font-size: 18px;
+    line-height: 18px;
+    margin: 0;
+    padding-bottom: 30px;
+    color: #e6b614;
+    font: bolder;
+
+}
+#itemlist_mode tr td a {
+    background-color: #b8dcdd;
+    color: #7c9e9f;
+    font-size: 18px;
+    font-style: italic;
+    padding: 2px 4px 0;
+    text-decoration: none;
+}
+#itemlist_mode tr td a:hover {
+    background-color: #c7eeef;
+}
+
+#itemlist_mode table tr td input.txtfield {
+    color: #636a86;
+    font-weight: bold;
+    line-height: 24px;
+    height: 24px;
+    width: 32px;
+    border: 0;
+    margin-left: 20px;
+    padding: 0 5px;
+    text-align: right;
+}
+#itemlist_mode table tr td a.minus, #itemlist_mode table tr td a.plus {
+    float: right;
+    background-position: 0 0;
+    height: 14px;
+    width: 14px;
+    margin: 5px 20px 5px 2px;
+}
+#itemlist_mode table tr td a.plus {
+    background-position: -33px 0;
+    margin-right: 2px;
+}
+#itemlist_mode table tr td a.minus:hover, #itemlist_mode table tr td a.plus:hover {
+    opacity:0.8;
+    filter:alpha(opacity=80);
+}
+#itemlist_mode table tbody tr td.last {
+    font-weight: bold;
+}
+#itemlist_mode table tbody tr td.last div {
+    color: #e6b614;
+    position: relative;
+}
+#itemlist_mode table tbody tr td.last div a {
+    background-color: #b9dddc;
+    color: #E6B614;
+    display: block;
+    font-size: 15px;
+    font-style: italic;
+    line-height: 24px;
+    height: 24px;
+    width: 114px;
+    text-decoration: none;
+    position: absolute;
+    bottom: -60px;
+    left: -50px;
+}
+#itemlist_mode table tbody tr td.last div #edit_item_btn {
+    left: -170px;
+}
+
+#itemlist_mode table tbody tr td.last div a:hover {
+    background-color: #c7eeef;
+}
+#itemlist_mode a.proceed-btn:hover {
+    background-color: #d2941d;
+}

@@ -1,0 +1,65 @@
+<div id="cover_story">
+  <div id="adbox">
+    <div id="category-browser">
+      <div id="search_bar">
+        <%= render 'items/common_search_form' %>
+      </div>
+      <ul id="menu">
+        <% @rootCategories.each do |rootCategory| %>
+            <li>
+              <%= link_to rootCategory.name,  {:controller => "items", :action => "index", :category => rootCategory.id } %>
+              <p class="category_subtitle"><%= rootCategory.subtitle %></p>
+              <ul>
+                <% rootCategory.children_categories.each do |sub_category| %>
+                    <li>
+                      <%= link_to sub_category.name,  {:controller => "items", :action => "index", :category => sub_category.id } %>
+                      <p class="category_subtitle"><%= sub_category.subtitle %></p>
+                    </li>
+                <% end %>
+              </ul>
+            </li>
+        <% end %>
+      </ul>
+
+    </div>
+    <img src="/assets/promoPhotos/cover-story.png" height="355" width="618" alt="Promo"> <a href="#" class="button"></a> <span></span>
+  </div>
+</div>
+
+<div id="main">
+  <div id="featured">
+    <h4><span>Featured</span></h4>
+    <ul class="items">
+      <% i = 0 %>
+      <% while i < 4 do %>
+      <li>
+        <a href="/items/2"> <img src="/assets/promoPhotos/iphone2.png" alt="Img"> <span>$199.50</span> iPhone 5 </a>
+      </li>
+      <% i += 1 %>
+      <% end %>
+    </ul>
+  </div>
+  <div id="sale">
+    <h4><span>Best Seller</span></h4>
+    <ul class="items">
+      <% i = 0 %>
+      <% while i < 4 do %>
+      <li>
+        <a href="/items/2"> <img src="/assets/itemImages/iphone4s.png" alt="Img"> <span>$8.50</span> iPhone 4s </a>
+      </li>
+          <% i += 1 %>
+      <% end %>
+    </ul>
+  </div>
+
+  <div id="watchlist">
+    <h4><span>Watchlist</span></h4>
+    <% if user_signed_in? %>
+        <%= render 'shared/watchlist' %>
+    <% else %>
+        <%= link_to "Sign in to create your watchlist!",   new_user_session_path %>
+    <% end %>
+  </div>
+</div>
+
+

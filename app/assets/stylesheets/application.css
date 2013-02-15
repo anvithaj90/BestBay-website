@@ -1,0 +1,435 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require dataTables/jquery.dataTables.bootstrap
+ *= require jquery-ui/smoothness
+ *= require_tree .
+ */
+
+div.dataTables_length label {
+    float: left;
+    text-align: left;
+}
+
+div.dataTables_length select {
+    width: 75px;
+}
+
+div.dataTables_filter label {
+    float: right;
+}
+
+div.dataTables_info {
+    padding-top: 8px;
+}
+
+div.dataTables_paginate {
+    float: right;
+    margin: 0;
+}
+
+table.table {
+    clear: both;
+    margin-bottom: 6px !important;
+    max-width: none !important;
+}
+
+/*table.table thead .sorting,*/
+/*table.table thead .sorting_asc,*/
+/*table.table thead .sorting_desc,*/
+/*table.table thead .sorting_asc_disabled,*/
+/*table.table thead .sorting_desc_disabled {*/
+    /*cursor: pointer;*/
+    /**cursor: hand;*/
+/*}*/
+
+/*table.table thead .sorting { background: url('images/sort_both.png') no-repeat center right; }*/
+/*table.table thead .sorting_asc { background: url('images/sort_asc.png') no-repeat center right; }*/
+/*table.table thead .sorting_desc { background: url('images/sort_desc.png') no-repeat center right; }*/
+
+/*table.table thead .sorting_asc_disabled { background: url('images/sort_asc_disabled.png') no-repeat center right; }*/
+/*table.table thead .sorting_desc_disabled { background: url('images/sort_desc_disabled.png') no-repeat center right; }*/
+
+/*table.dataTable th:active {*/
+    /*outline: none;*/
+/*}*/
+
+/* Scrolling */
+div.dataTables_scrollHead table {
+    margin-bottom: 0 !important;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+div.dataTables_scrollHead table thead tr:last-child th:first-child,
+div.dataTables_scrollHead table thead tr:last-child td:first-child {
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+
+div.dataTables_scrollBody table {
+    border-top: none;
+    margin-bottom: 0 !important;
+}
+
+div.dataTables_scrollBody tbody tr:first-child th,
+div.dataTables_scrollBody tbody tr:first-child td {
+    border-top: none;
+}
+
+div.dataTables_scrollFoot table {
+    border-top: none;
+}
+
+
+
+
+/*
+ * TableTools styles
+ */
+.table tbody tr.active td,
+.table tbody tr.active th {
+    background-color: #08C;
+    color: white;
+}
+
+.table tbody tr.active:hover td,
+.table tbody tr.active:hover th {
+    background-color: #0075b0 !important;
+}
+
+.table-striped tbody tr.active:nth-child(odd) td,
+.table-striped tbody tr.active:nth-child(odd) th {
+    background-color: #017ebc;
+}
+
+table.DTTT_selectable tbody tr {
+    cursor: pointer;
+    *cursor: hand;
+}
+
+div.DTTT .btn {
+    color: #333 !important;
+    font-size: 12px;
+}
+
+div.DTTT .btn:hover {
+    text-decoration: none !important;
+}
+
+
+ul.DTTT_dropdown.dropdown-menu a {
+    color: #333 !important; /* needed only when demo_page.css is included */
+}
+
+ul.DTTT_dropdown.dropdown-menu li:hover a {
+    background-color: #0088cc;
+    color: white !important;
+}
+
+/* TableTools information display */
+div.DTTT_print_info.modal {
+    height: 150px;
+    margin-top: -75px;
+    text-align: center;
+}
+
+div.DTTT_print_info h6 {
+    font-weight: normal;
+    font-size: 28px;
+    line-height: 28px;
+    margin: 1em;
+}
+
+div.DTTT_print_info p {
+    font-size: 14px;
+    line-height: 20px;
+}
+
+
+
+/*
+ * FixedColumns styles
+ */
+div.DTFC_LeftHeadWrapper table,
+div.DTFC_LeftFootWrapper table,
+table.DTFC_Cloned tr.even {
+    background-color: white;
+}
+
+div.DTFC_LeftHeadWrapper table {
+    margin-bottom: 0 !important;
+    border-top-right-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+
+div.DTFC_LeftHeadWrapper table thead tr:last-child th:first-child,
+div.DTFC_LeftHeadWrapper table thead tr:last-child td:first-child {
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+
+div.DTFC_LeftBodyWrapper table {
+    border-top: none;
+    margin-bottom: 0 !important;
+}
+
+div.DTFC_LeftBodyWrapper tbody tr:first-child th,
+div.DTFC_LeftBodyWrapper tbody tr:first-child td {
+    border-top: none;
+}
+
+
+.pretty th .desc {
+    background-image: url(/images/down_arrow.gif);
+}
+
+
+div.DTFC_LeftFootWrapper table {
+    border-top: none;
+
+}
+
+
+
+
+/*------------------------------ checkout page ------------------------------*/
+#checkout {
+    display: inline-block;
+    padding: 0 12px 30px;
+    *padding: 0 12px;/** Needed for IE7 **/
+}
+#checkout h4 span {
+    background-color: #e6b614;
+}
+#checkout table {
+    color: #d3d1d2;
+    font-family: 'Trebuchet MS';
+    width: 900px;
+    margin: 0 auto 90px;
+}
+#checkout table th {
+    color: #636a86;
+    font-size: 14px;
+    line-height: 24px;
+}
+#checkout table tr th:first-child {
+    padding-left: 50px;
+    text-align: left;
+}
+#checkout table tr td {
+    color: #636a86;
+    width: 120px;
+    padding: 6px 0 36px;
+    text-align: center;
+}
+#checkout table tr td:first-child {
+    width: 520px;
+    text-align: left;
+}
+#checkout table tr td img {
+    float: left;
+    margin: 18px 18px 18px 40px;
+    width: 200px;
+    height: 200px;
+}
+#checkout table tr td b {
+    display: block;
+    font-size: 13px;
+    margin-top: 18px;
+    color: #e6b614;
+}
+#checkout table tr td p {
+    font-size: 12px;
+    line-height: 18px;
+    margin: 0;
+    padding-bottom: 30px;
+    color: #636a86;
+
+}
+#checkout table tr td input.txtfield {
+    color: #636a86;
+    font-weight: bold;
+    line-height: 24px;
+    height: 24px;
+    width: 32px;
+    border: 0;
+    margin-left: 20px;
+    padding: 0 5px;
+    text-align: right;
+}
+#checkout table tr td a.minus, #checkout table tr td a.plus {
+    float: right;
+    background-position: 0 0;
+    height: 14px;
+    width: 14px;
+    margin: 5px 20px 5px 2px;
+}
+#checkout table tr td a.plus {
+    background-position: -33px 0;
+    margin-right: 2px;
+}
+#checkout table tr td a.minus:hover, #checkout table tr td a.plus:hover {
+    opacity:0.8;
+    filter:alpha(opacity=80);
+}
+#checkout table tbody tr td.last {
+    font-weight: bold;
+}
+#checkout table tbody tr td.last div {
+    color: #e6b614;
+    position: relative;
+}
+#checkout table tbody tr td.last div a {
+    background-color: #b8dcdd;
+    color: #809ea0;
+    display: block;
+    font-size: 15px;
+    font-style: italic;
+    line-height: 24px;
+    height: 24px;
+    width: 114px;
+    text-decoration: none;
+    position: absolute;
+    bottom: -60px;
+    left: -50px;
+}
+#checkout table tbody tr td.last div a:hover {
+    background-color: #c7eeef;
+}
+#checkout a.proceed-btn {
+    float: right;
+    background-color: #e5b614;
+    color: #fff;
+    font-family: 'HammersmithOneRegular';
+    font-size: 20px;
+    font-style: italic;
+    padding: 6px 12px;
+    text-decoration: none;
+}
+#checkout a.proceed-btn:hover {
+    background-color: #d2941d;
+}
+
+#cart {
+    y: inline-block;
+padding: 0 12px 30px;
+*padding: 0 12px;/** Needed for IE7 **/
+    }
+#cart table {
+    color: #d3d1d2;
+    font-family: 'Trebuchet MS';
+    width: 300px;
+    margin: 0 auto 90px;
+}
+#cart table th {
+    color: #636a86;
+    font-size: 14px;
+    line-height: 24px;
+}
+#cart table tr th:first-child {
+    padding-left: 5px;
+    text-align: left;
+}
+#cart table tr td {
+    color: #636a86;
+    width: 120px;
+    padding: 6px 0 36px;
+    text-align: center;
+}
+#cart tr td:first-child {
+    width: 520px;
+    text-align: left;
+}
+#cart table tr td img {
+    float: left;
+    /*margin: 18px 18px 18px 40px;*/
+    width: 20px;
+    height: 20px;
+}
+#cart table tr td b {
+    display: block;
+    font-size: 13px;
+    margin-top: 18px;
+    color: #e6b614;
+}
+#cart table tr td p {
+    font-size: 12px;
+    line-height: 18px;
+    margin: 0;
+    padding-bottom: 30px;
+    color: #636a86;
+
+}
+/*#checkout table tr td input.txtfield {*/
+    /*color: #636a86;*/
+    /*font-weight: bold;*/
+    /*line-height: 24px;*/
+    /*height: 24px;*/
+    /*width: 32px;*/
+    /*border: 0;*/
+    /*margin-left: 20px;*/
+    /*padding: 0 5px;*/
+    /*text-align: right;*/
+/*}*/
+/*#checkout table tr td a.minus, #checkout table tr td a.plus {*/
+    /*float: right;*/
+    /*background-position: 0 0;*/
+    /*height: 14px;*/
+    /*width: 14px;*/
+    /*margin: 5px 20px 5px 2px;*/
+/*}*/
+/*#checkout table tr td a.plus {*/
+    /*background-position: -33px 0;*/
+    /*margin-right: 2px;*/
+/*}*/
+/*#checkout table tr td a.minus:hover, #checkout table tr td a.plus:hover {*/
+    /*opacity:0.8;*/
+    /*filter:alpha(opacity=80);*/
+/*}*/
+/*#checkout table tbody tr td.last {*/
+    /*font-weight: bold;*/
+/*}*/
+/*#checkout table tbody tr td.last div {*/
+    /*color: #e6b614;*/
+    /*position: relative;*/
+/*}*/
+/*#checkout table tbody tr td.last div a {*/
+    /*background-color: #b8dcdd;*/
+    /*color: #809ea0;*/
+    /*display: block;*/
+    /*font-size: 15px;*/
+    /*font-style: italic;*/
+    /*line-height: 24px;*/
+    /*height: 24px;*/
+    /*width: 114px;*/
+    /*text-decoration: none;*/
+    /*position: absolute;*/
+    /*bottom: -60px;*/
+    /*left: -50px;*/
+/*}*/
+/*#checkout table tbody tr td.last div a:hover {*/
+    /*background-color: #c7eeef;*/
+/*}*/
+/*#checkout a.proceed-btn {*/
+    /*float: right;*/
+    /*background-color: #e5b614;*/
+    /*color: #fff;*/
+    /*font-family: 'HammersmithOneRegular';*/
+    /*font-size: 20px;*/
+    /*font-style: italic;*/
+    /*padding: 6px 12px;*/
+    /*text-decoration: none;*/
+/*}*/
+/*#checkout a.proceed-btn:hover {*/
+    /*background-color: #d2941d;*/
+/*}*/

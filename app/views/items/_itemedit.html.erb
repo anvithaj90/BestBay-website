@@ -1,0 +1,63 @@
+<%= form_tag({:controller => "items", :action => "modify_picture"}, :method => "post", :multipart => true) do %>
+    <div id="img">
+      <img src="<%= @item.photo%>" width="200" height="150"/>
+    </div>
+
+    <div class="field">
+      <%= file_field_tag :photo %>
+    </div>
+
+    <div class="actions">
+      <%= submit_tag "Change Picture", class: 'btn' %>
+    </div>
+<% end %>
+
+<%= form_for(@item, :multipart => true) do |f| %>
+    <div xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+      <div>
+        <% if @item.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
+
+              <ul>
+                <% @item.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                <% end %>
+              </ul>
+            </div>
+        <% end %>
+      </div>
+      </br>
+
+      <div class="field">
+        </br>  Item Name     * required</br>
+        <%= f.text_field 'name', :value => @item.name %>
+      </div>
+
+
+      <div class="field">
+        General description     *required  </br>
+        <%= f.text_area 'general_description', :value => @item.general_description %>
+      </div>
+
+      <div class="field">
+        Quantity     * required </br>
+        <%= f.number_field 'quantity', :value => @item.quantity,:min => 1 %>
+      </div>
+
+      <div class="field">
+        Price <br/>
+        <%= f.number_field 'price', :value => @item.price,:min => 0 %>
+      </div>
+    </div>
+    <div class="actions">
+      <%= f.submit "Finish edit", class: 'btn' %>
+    </div>
+<% end %>
+
+<script type="text/javascript">
+    $('#myTab a').click(function (e) {
+        e.preventDefault();
+        $(this).tab('show');
+    })
+</script>

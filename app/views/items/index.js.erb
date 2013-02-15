@@ -1,0 +1,12 @@
+//Should have some variable to decide which view to render (grid/list)
+<% if @mode == '2' %>
+$("#items_panel").html("<%= escape_javascript(render(partial: 'items/gridview', locals: {:items => @items})) %>");
+<% else %>
+$("#items_panel").html("<%= escape_javascript(render(partial: 'items/listview', locals: {:items => @items})) %>");
+<% end %>
+$("#category_panel").html("<%= escape_javascript(render(partial: 'category_panel', locals: {
+                                                   :parentCategories => @parentCategories,
+                                                   :subCategories => @subCategories,
+                                                   :selected_parent_cate_id => @selected_parent_cate_id,
+                                                   :selected_sub_cate_id => @selected_sub_cate_id,
+                                                   :search => @searchStr, :mode => @mode} )) %>")

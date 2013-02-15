@@ -1,0 +1,7 @@
+<%= form_for(current_user.shopping_carts.build(item_id: @item.id)) do |f| %>
+    <div><%= f.hidden_field :item_id %></div>
+    <div>
+      <%= f.number_field :quantity,:min => 1, :max => @item.quantity %>
+      <%= f.submit "Add to Cart", class: "btn btn-small btn-primary" %>
+    </div>
+<% end %>

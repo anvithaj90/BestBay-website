@@ -1,0 +1,25 @@
+<%= form_tag({:controller => "users", :action => "profile_info"}, :method => "post", :multipart => true) do %>
+    <div><%= hidden_field_tag :user_id, current_user.id %></div>
+    <div class="pic_upload">
+  <div class="field">
+  Contact Information:
+  <br>
+  <%= text_field_tag :contact %>
+  </div>
+
+<div id="img">
+  <img src="<%= @user.photo%>" width="200" height="150"/>
+</div>
+
+<div class="field">
+  <%= file_field_tag :photo %>
+</div>
+
+</br>  Password * required</br>
+  <%= password_field_tag :password %>
+
+<div class="actions">
+  <%= submit_tag "Update" %>
+</div>
+<% end %>
+</div>

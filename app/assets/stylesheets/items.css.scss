@@ -1,0 +1,30 @@
+// Place all the styles related to the Items controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#item_description h1{
+  text-align: left;
+}
+
+#items {
+  background-color: #fff;
+}
+
+.btn-toolbar{
+  margin-left: 34px;
+}
+.input-append2{
+  margin-left: 34px;
+}
+.descriptionfield text_area{
+  width: 445px;
+}
+#shadow2{
+  background: url(/assets/styleImages/shadow.jpg) no-repeat center top;
+  clear: both;
+  display: block;
+  height: 13px;
+  margin: -6px auto 0;
+  margin-bottom: 30px;
+}

@@ -1,0 +1,24 @@
+<div id="header">
+  <div id="navigation">
+    <ul id="primary">
+      <li>
+        <%= link_to "MobiDr", root_path, id: "logo_text" %>
+      </li>
+    </ul>
+    <ul id="secondary">
+      <% if user_signed_in? %>
+          <li><%= link_to current_user.name, '/users/profile' %> </li>
+          <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+      <% else %>
+          <li><%= link_to "Sign in",   new_user_session_path %></li>
+      <% end %>
+
+      <li><%= link_to "Sell", new_item_path %></li>
+      <li><a href="#" class="show_hide">Shopping Cart</a></li>
+    </ul>
+  </div>
+  <div class="slidingDiv">
+    <%= render 'shared/shopping_cart' %>
+    <a href="#" class="show_hide">close</a>
+  </div>
+</div>

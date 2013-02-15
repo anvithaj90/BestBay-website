@@ -1,0 +1,7 @@
+<%
+id = "#watch_form"
+id += @item.id.to_s
+puts id
+ %>
+
+$("<%= id %>").html("<%= escape_javascript(render('users/add_to_watch')) %>")

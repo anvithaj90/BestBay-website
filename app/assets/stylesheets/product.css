@@ -1,0 +1,212 @@
+#product {
+  background: url(/assets/styleImages/separator-horizontal.png) no-repeat center top;
+  font-family: 'Trebuchet MS';
+  color: #636A86;
+  display: inline-block;
+  width: 900px;
+  padding: 12px 12px 0;
+  margin-left: 25px;
+  margin-right: 30px;
+}
+#bidding{
+    float: right;
+    background: url(/assets/styleImages/bg-quick-search.jpg) no-repeat;
+}
+#product div.section {
+  float: left;
+  width: 438px;
+  padding-left: 12px;
+}
+#product div.section ul {
+  float: right;
+  list-style: none;
+  margin: 0 62px 0 0;
+  padding: 0;
+}
+#product div.section ul li {
+  margin-bottom: 6px;
+}
+#product div.section ul li a:hover {
+  opacity:0.8;
+  filter:alpha(opacity=80);
+}
+#product div.section div {
+  height: 316px;
+  width: 317px;
+  border: 1px solid #d2cecf;
+}
+#product div.section h2 {
+  color: #636A86;
+  font-family: 'helvetica neue';
+  line-height: 36px;
+  margin: 0 0 12px;
+  padding-right: 62px;
+}
+#product div.section h2 span {
+  float: right;
+  color: #e6b614;
+  font-size: 36px;
+  margin-top: -6px;
+}
+#product div.section p {
+  color: #636a86;
+  font-size: 14px;
+  line-height: 24px;
+  margin: 0 62px 0 0;
+  padding-bottom: 36px;
+}
+#product div.section p a {
+  color: #636a86;
+}
+#product div.section form select {
+  color: #5c7675;
+  display: block;
+  height: 26px;
+  width: 144px;
+  border: 0;
+  margin-bottom: 12px;
+  padding: 2px;
+}
+#product div.section form input {
+  background-color: #b8dcdd;
+  color: #7c9e9f;
+  cursor: pointer;
+  font-family: 'HammersmithOneRegular';
+  font-style: oblique;
+  line-height: 24px;
+  height: 24px;
+  width: 116px;
+  border: 0;
+  margin: 18px 0 0;
+  text-align: center;
+}
+#product div.section form input:hover {
+  background-color: #c7eeef;
+}
+#product div.section input.btn-cart {
+  background-color: #e5b614;
+  color: #fcffff;
+}
+#product div.section input.btn-cart:hover {
+  background-color: #d2941d;
+}
+#product h4{
+  background: url(/assets/styleImages/separator-horizontal.png) no-repeat center center;
+  color: #fbfdf8;
+  font-family: 'Helvetica Neue';
+  font-weight: normal;
+  line-height: 30px;
+  margin: 0 0 24px;
+  padding: 0 24px;
+}
+#product .btn-cart {
+  background-color: #e5b614;
+  color: #000000;
+  padding: 2px 5px 0;
+}
+#product .btn-cart:hover {
+  background-color: #69d277;
+}
+#product .btn-cart2 {
+    background-color: #e5b614;
+    color: #000000;
+    padding: 2px 5px 0;
+}
+#product .btn-cart2:hover {
+    background-color: #d21d26;
+}
+
+#product #showphoto img{
+  margin-top: 5px;
+  margin-right: 5px;
+  margin-left: 5px;
+  width: 240px;
+  height: 290px;
+}
+#product select {
+    font-family: 'Trebuchet MS';
+    color: #5c7675;
+    width: 194px;
+    border: 0;
+    padding: 0;
+}
+#product  h2 {
+    color: #dce7ff;
+    font-family: 'Trebuchet MS';
+    line-height: 50px;
+    margin: 0 0 12px;
+    padding-right: 62px;
+}
+#product  h2 span {
+    float: right;
+    color: #e6b614;
+    font-size: 36px;
+    margin-top: -6px;
+}
+#product #image{
+    width: 290px;
+    height: 300px;
+    float: left;
+}
+#product #bidding{
+    width: 288px;
+    height: 300px;
+    float: left;
+    padding-left: 10px ;
+}
+#product #description{
+    width: 302px;
+    height: 300px;
+    float: left;
+}
+.btn-watchlist {
+    background-color: #4052e5;
+    color: #6b5bff;
+    padding: 2px 5px 0;
+}
+#shopping_cart_quantity{
+    width: 120px;
+}
+#bidding_bid_price{
+    width: 120px;
+}
+
+#shadow{
+background: url(/assets/styleImages/shadow.jpg) no-repeat center top;
+clear: both;
+display: block;
+height: 13px;
+margin: -6px auto 0;
+    margin-bottom: 30px;
+}
+#description h2{
+    color: #636A86;
+}
+#description{
+    background-color: #ffffff;
+    border-top: 10px;
+}
+
+#image{
+    background-color: #ffffff;
+}
+#image img{
+    box-shadow:0 0 2px #000000;
+    border: 2px;
+}
+.footer h4 {
+    background: url(/assets/styleImages/separator-horizontal.png) no-repeat center center;
+    color: #FBFDF8;
+    font-family: 'Helvetica Neue';
+    font-weight: normal;
+    line-height: 30px;
+    margin: 0 0 24px;
+    padding: 0 24px;
+}
+#product h5{
+     color: #f2faff;
+     text-align: left;
+     padding-left: 10px;
+     font-family: "Calibri";
+     font-size: 24px;
+}

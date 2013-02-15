@@ -1,0 +1,34 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/.
+.user_sign_up{
+  //border: 2px solid #0e0e0e;
+  padding: 15px;
+  width: 400px;
+  margin: 0 auto;
+  border-radius:15px 10px 15px 15px;
+  box-shadow:0 0 10px #779dff;
+  border:3px solid ff2766;
+  background-color: #ffffff;
+  font-family: "Helvetica Neue";
+}
+.user_sign_up h3{
+  text-align: center;
+}
+.user_sign_in{
+  //border: 2px solid #0e0e0e;
+  padding: 15px;
+  width: 400px;
+  margin: 0 auto;
+  border-radius:15px 15px 15px 15px;
+  box-shadow:0 0 10px #779dff;
+  border:3px solid ff2766;
+  background-color: #ffffff;
+  font-family: "Helvetica Neue";
+}
+.basic{
+  font-family: "Helvetica Neue";
+}
+.tabbable{
+  font-family: "Helvetica Neue";
+}

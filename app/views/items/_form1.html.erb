@@ -1,0 +1,49 @@
+<%= form_tag({:controller => "items", :action => "save_picture"}, :method => "post", :multipart => true) do %>
+    <div class="tabbable"> <!-- Only required for left/right tabs -->
+      <div class="nav nav-tabs">
+        <li><a href="#tab1" data-toggle="tab">Basic Information <span>&raquo;</span></a></li>
+        <li class="active"><a href="#tab2" data-toggle="tab">Upload Pictures <span>&raquo;</span></a></li>
+        <li><a href="#tab3" data-toggle="tab">Set price and Confirm</a></li>
+      </div>
+      <div class="tab-content">
+        <div class="tab-pane active" id="tab1">
+
+        </div>
+        <div class="tab-pane" id="tab2">
+        </div>
+      </div>
+    </div>
+
+    <div class="pic_upload">
+    <div class="field">
+      </br>  Item Name    </br>
+      <%= @item.name %>
+    </div>
+
+
+    <div class="field">
+      General description      </br>
+      <%= @item.general_description %>
+    </div>
+
+    <div class="field">
+      Quantity      </br>
+      <%= @item.quantity %>
+    </div>
+
+
+    <div id="img">
+      <img src="<%= @item.photo%>" width="200" height="150"/>
+    </div>
+
+    <div class="field">
+      <%= file_field_tag :photo %>
+    </div>
+
+    <div class="actions">
+      <%= submit_tag "Upload", class: 'btn btn-small btn-info' %>
+      <%= link_to "Next", "/items/set_price", class: 'btn btn-primary' %>
+    </div>
+<% end %>
+</div>
+

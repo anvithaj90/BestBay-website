@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MobiDr</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <style>
+      .ui-menu { width: 200px; margin-bottom: 2em; }
+  </style>
+  <%= csrf_meta_tags %>
+  <%= render "layouts/shim" %>
+</head>
+<body>
+<div id="background">
+  <div id="page">
+    <%= render "layouts/header" %>
+    <div class="container">
+      <div id="contents">
+        <%= yield %>
+        <%= render 'layouts/footer' %>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
